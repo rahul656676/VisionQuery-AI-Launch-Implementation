@@ -13,7 +13,12 @@ export default function Dashboard() {
   const fetchJobs = async (searchQuery = "") => {
     setLoading(true);
     try {
-      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/search/?query=${encodeURIComponent(searchQuery)}`);
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/search/?query=${encodeURIComponent(searchQuery)}`, {
+        headers: {
+          "Bypass-Tunnel-Reminder": "true",
+          "ngrok-skip-browser-warning": "true",
+        }
+      });
       setResults(res.data);
     } catch (err) {
       console.error(err);

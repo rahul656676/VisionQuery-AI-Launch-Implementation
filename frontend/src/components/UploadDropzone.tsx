@@ -35,6 +35,8 @@ export function UploadDropzone() {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/uploads/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          "Bypass-Tunnel-Reminder": "true",
+          "ngrok-skip-browser-warning": "true",
           ...(token ? { "Authorization": `Bearer ${token}` } : {})
         },
         onUploadProgress: (progressEvent) => {
