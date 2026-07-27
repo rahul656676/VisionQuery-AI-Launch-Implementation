@@ -1,0 +1,11 @@
+fastapi==0.115.6
+uvicorn==0.34.0
+supabase==2.31.0
+google-generativeai==0.8.4
+ultralytics==8.3.62
+opencv-python-headless==4.11.0.86
+python-multipart==0.0.20
+slowapi==0.1.9
+pydantic-settings==2.7.1
+groq==1.6.0
+requests==2.34.2

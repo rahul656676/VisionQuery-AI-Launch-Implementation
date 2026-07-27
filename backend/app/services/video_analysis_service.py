@@ -9,8 +9,8 @@ from ultralytics import YOLO
 
 class VideoAnalysisService:
     def __init__(self):
-        import os
-        api_key = os.getenv("GEMINI_API_KEY")
+        from app.core.config import settings
+        api_key = settings.GEMINI_API_KEY
         if api_key:
             genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel('gemini-flash-latest')

@@ -6,8 +6,8 @@ import google.generativeai as genai
 class AnalysisService:
     def __init__(self):
         # Configure Gemini with the user-provided API key from env
-        import os
-        api_key = os.getenv("GEMINI_API_KEY")
+        from app.core.config import settings
+        api_key = settings.GEMINI_API_KEY
         if api_key:
             genai.configure(api_key=api_key)
         # Use gemini-flash-latest for fast and accurate vision
