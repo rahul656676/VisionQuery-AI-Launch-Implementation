@@ -58,3 +58,5 @@ class VideoAnalysisService:
         except Exception as e:
             print(f"Error in video analysis: {e}")
             raise e
+
+video_analysis_service = VideoAnalysisService()
